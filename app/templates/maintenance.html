@@ -14,7 +14,7 @@
 			<td>{{item.userRole}}</td>
 			<td>{{item.roleDesc}}</td>
 			<td>
-				<a class='edit' ui-sref="roleMaintenance.editRole({role:'{{item.userRole}}'})" ng-click="role(item)" > Edit</a> 
+				<a class='edit' ui-sref="editRole({role:'{{item.userRole}}'})" ng-click="role(item)" > Edit</a> 
 				/ 
 				<a class='remove' ng-click="pagedItems.splice($index,1)"> Delete </a>
 				

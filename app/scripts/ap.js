@@ -36,7 +36,7 @@ var app = angular
 				templateUrl: 'templates/maintenance.html',
 				controller: 'loggedLanding'
 			})
-			.state('roleMaintenance.editRole', {
+			.state('editRole', {
 				url: 'roleMaintenance/editRole/:role',
 				templateUrl: 'templates/editRole.html',
 				controller: 'editRole'
