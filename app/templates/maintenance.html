@@ -1,30 +1,11 @@
-<div class='manageUsersHead'>
-	<h3>Manage user Roles</h3>
-	<input placeholder="SEARCH" />
-</div>
 
-<table>
-	<thead>
-		<th>USER ROLE</th>
-		<th>ROLE DESCRIPTION</th>
-		<th>ACTION</th>
-	</thead>
-	<tbody>
-		<tr ng-repeat="item in pagedItems | orderBy:sortingOrder:reverse">
-			<td>{{item.userRole}}</td>
-			<td>{{item.roleDesc}}</td>
-			<td>
-				<a class='edit' ui-sref="editRole({role:'{{item.userRole}}'})" ng-click="role(item)" > Edit</a> 
-				/ 
-				<a class='remove' ng-click="pagedItems.splice($index,1)"> Delete </a>
-				
-			</td>
-		</tr>
-	</tbody>
-	<tfoot class='maintain'>
-		<td colspan="3"><span>+ ADD USER ROLE</span></td>
-	</tfoot>
-</table>
+<div ui-view>
+	
+	<div id="homeWrapper" ui-view cos-directive ng-controller='loggedLanding'>
+		Call template viewData.tpl.html
+	</div>
+	
+</div>
 
 
 

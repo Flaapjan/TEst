@@ -1,22 +1,22 @@
 [
 	{
-		"userRole": "System Administrator",
+		"item": "System Administrator",
 		"roleDesc": "Top-level access to everything."
 	},
 	{
-		"userRole": "Administrator",
+		"item": "Administrator",
 		"roleDesc": "Mid-level access, can create and edit users."
 	},
 	{
-		"userRole": "Agent",
+		"item": "Agent",
 		"roleDesc": "Use of the software. Limited access."
 	},
 	{
-		"userRole": "Team Leader",
+		"item": "Team Leader",
 		"roleDesc": "Manager of agents, more access than agents, but less than managers."
 	},
 	{
-		"userRole": "Manager",
+		"item": "Manager",
 		"roleDesc": "Manager of team leaders and agents. More access than tea leaders, less than admins."
 	}
 ]

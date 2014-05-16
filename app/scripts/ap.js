@@ -1,25 +1,40 @@
 var app = angular
 	.module('app', [
 		'ui.router'
-	])
-	.config(['$urlRouterProvider', '$stateProvider', function($urlRouterProvider, $stateProvider){
-		$urlRouterProvider.otherwise('home');
+	]/*, function($routeProvider) {
+		$routeProvider
+			.when('/roleMaintenance', {
+				templateUrl: 'templates/maintenance.html',
+				controller: 'loggedLanding'
+			}).otherwise('/');
+	}*/)
+	.config(['$urlRouterProvider','$stateProvider', function($urlRouterProvider,$stateProvider){
+		
+		//$routeProvider
+		
+		$urlRouterProvider.otherwise('/');
+		
 		
 		$stateProvider
 			.state('home', {
-				url: '/home/',
+				url: '/',
 				templateUrl: 'templates/home.html',
 				controller: 'homeCtrl'
 			})
-			.state('about', {
-				url: '/about',
-				templateUrl: 'templates/about.html',
-				controller: 'aboutCtrl'
+			.state('cos', {
+				url: '/cos',
+				templateUrl: 'templates/cos.html',
+				controller: 'cosCtrl'
 			})
-			.state('contacts', {
-				url: '/contacts',
-				templateUrl: 'templates/contacts.html',
-				controller: 'contactCtrl'
+			.state('roleMaintenance', {
+				url: '/roleMaintenance',
+				templateUrl: 'templates/maintenance.html',
+				controller: 'loggedLanding'
+			})
+			.state('roleMaintenance.editRole', {
+				url: '/editRole/:role',
+				templateUrl: 'templates/editRole.html',
+				controller: 'editRole'
 			})
 			.state('login', {
 				url: '/login',
@@ -31,22 +46,10 @@ var app = angular
 				templateUrl: 'templates/logout.html',
 				controller: 'LogoutController'
 			})
-			.state('roleMaintenance', {
-				url: 'editRole',
-				templateUrl: 'templates/maintenance.html',
-				controller: 'loggedLanding'
-			})
-			.state('editRole', {
-				url: 'roleMaintenance/editRole/:role',
-				templateUrl: 'templates/editRole.html',
-				controller: 'editRole'
-			})
-			
 	}])
 			
-	
-	
-	
+
+
 	
 	
 	

@@ -1,17 +1,17 @@
 [
 	{
-		"application":"User role manager"
+		"item":"User role manager"
 	},
 	{
-		"application":"User manager"
+		"item":"User manager"
 	},
 	{
-		"application":"Company Manager"
+		"item":"Company Manager"
 	},
 	{
-		"application":"Interaction manager"
+		"item":"Interaction manager"
 	},
 	{
-		"application":"Call Center"
+		"item":"Call Center"
 	}
 ]
