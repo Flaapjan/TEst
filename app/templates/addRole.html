@@ -1,0 +1,22 @@
+Add User role
+<br/>
+<input type="text" placeholder="User role name" />
+<br/>
+<input type="text" placeholder="User role description" />
+
+<table>
+	<thead>
+		<th>ALLOW</th>
+		<th>APPLICATION</th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="items in pagedItems">
+			<td style="width:50px"><input type="checkbox" /></td>
+			<td style="width:auto">{{items.application}}</td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<td style="width:50px"><button  ui-sref="home.roleMaintenance">BACK</button></td>
+		<td style="width:auto"><button>SAVE</button></td>
+	</tfoot>
+</table>
