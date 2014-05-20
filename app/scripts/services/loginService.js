@@ -6,27 +6,19 @@ angular
 		return{
 			login:function(user){
 				
-				//var $promise = $http.post('http://localhost:8080/login',user); //send data to user.php
-				
-				var $promise = $http({
-					url: 'http://192.168.1.136:8080/login',
-					method: 'POST',
-					data: user,
-					transformRequest: false,
-					headers: {
-						'Authorization': 'Basic dGVzdDp0ZXN0',
-						'Content-Type': 'application/x-www-form-urlencoded'
-					}
-				});
+				console.log(user.emailAddress + ' - ' + user.password + ' - ' + user);
+				var $promise = $http.post('http://localhost:8080/login',user); //send data to user.php
 				
 				$promise.then(function(msg){
-					if(msg.data=='success'){
-						console.log('success login');
+					console.log(msg.data);
+					user = msg.data;
+					console.log(user.firstName + ' - ' + user.surname + ' - ' + user);
+						/*console.log('success login');
 						$location.path("templates/home.html");
 						$('#logInOut').removeAttr('ui-sref-active').html("<a ui-sref='logout' href='#/logout'>Logout</a>");
 					}else{
 						console.log('error login - ' + msg.data );
-					}
+					}*/
 				});
 			}
 		}

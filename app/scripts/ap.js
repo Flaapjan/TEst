@@ -2,8 +2,8 @@ var app = angular
 	.module('app', [
 		'ui.router'
 	])
-	.config(['$urlRouterProvider','$stateProvider', function($urlRouterProvider,$stateProvider){
-		
+	.config(['$urlRouterProvider','$stateProvider','$httpProvider', function($urlRouterProvider,$stateProvider,$httpProvider){
+		delete $httpProvider.defaults.headers.common['X-Requested-With'];
 		$urlRouterProvider.otherwise('/');
 		$stateProvider
 			.state('home', {
