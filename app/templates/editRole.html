@@ -1,6 +1,7 @@
 Edit <div ng-model="userRole" style="display:inline;">{{userRole}}</div> role
 <br/>
-<input type="text" class="roleEditInput" placeholder="User role name" name="userRole" ng-model="userRole" /> 
+<input type="text" class="roleEditInput" placeholder="User role name" 
+name="userRole" ng-model="userRole" /> 
 <br/>
 <input type="text" class="roleEditInput" placeholder="User role description" name="roleDesc" ng-model="roleDesc" />
 
@@ -12,7 +13,7 @@ Edit <div ng-model="userRole" style="display:inline;">{{userRole}}</div> role
 	<tbody>
 		<tr ng-repeat="items in pagedItems">
 			<td style="width:20px"><input type="checkbox" /></td>
-			<td style="width:auto">{{items.name}}</td>
+			<td style="width:auto">{{items.item}}</td>
 		</tr>
 	</tbody>
 	<tfoot>

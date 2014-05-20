@@ -11,7 +11,7 @@
 		<tr ng-repeat="item in pagedItems | searchFor:searchString">
 			<td ng-repeat='data in item'>{{data}}</td>
 			<td style='width:40px'>
-				<a class='edit' ui-sref="edit" ng-click="edit(item)" > Edit</a> 
+				<a class='edit' ui-sref="editCos({cos:'{{item.item}}'})" ng-click="cos(item)" > Edit</a> 
 				/ 
 				<a class='remove' ng-click="pagedItems.splice($index,1)"> Delete </a>
 				
@@ -19,6 +19,6 @@
 		</tr>
 	</tbody> 
 	<tfoot class='maintain'>
-		<td colspan="3"><span>+ ADD USER ROLE</span></td>
+		<td colspan="3"><a ui-sref="addCos"><span>+ ADD CLASS OF SERVICE</span></a></td>
 	</tfoot>
 </table>

@@ -11,7 +11,7 @@
 		<tr ng-repeat="item in pagedItems | searchFor:searchString">
 			<td ng-repeat='data in item'>{{data}}</td>
 			<td style='width:40px'>
-				<a class='edit' ui-sref="edit" ng-click="edit(item)" > Edit</a> 
+				<a class='edit' ui-sref="editRole({role:'{{item.item}}'})" ng-click="role(item)" > Edit</a> 
 				/ 
 				<a class='remove' ng-click="pagedItems.splice($index,1)"> Delete </a>
 				

@@ -1,20 +1,10 @@
 var app = angular
 	.module('app', [
 		'ui.router'
-	]/*, function($routeProvider) {
-		$routeProvider
-			.when('/roleMaintenance', {
-				templateUrl: 'templates/maintenance.html',
-				controller: 'loggedLanding'
-			}).otherwise('/');
-	}*/)
+	])
 	.config(['$urlRouterProvider','$stateProvider', function($urlRouterProvider,$stateProvider){
 		
-		//$routeProvider
-		
 		$urlRouterProvider.otherwise('/');
-		
-		
 		$stateProvider
 			.state('home', {
 				url: '/',
@@ -26,12 +16,22 @@ var app = angular
 				templateUrl: 'templates/cos.html',
 				controller: 'cosCtrl'
 			})
+			.state('addCos', {
+				url: '/addCos',
+				templateUrl: 'templates/addCos.html',
+				controller: 'addCos'
+			})
+			.state('editCos', {
+				url: '/editCos/:cos',
+				templateUrl: 'templates/editCos.html',
+				controller: 'editCos'
+			})
 			.state('roleMaintenance', {
 				url: '/roleMaintenance',
 				templateUrl: 'templates/maintenance.html',
-				controller: 'loggedLanding'
+				controller: 'roleCtrl'
 			})
-			.state('roleMaintenance.editRole', {
+			.state('editRole', {
 				url: '/editRole/:role',
 				templateUrl: 'templates/editRole.html',
 				controller: 'editRole'

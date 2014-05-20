@@ -1,0 +1,29 @@
+[{
+	"title": "INTERNAL ACCESS",
+	"values": {
+		"row1":{
+			"value": "Internal Calls",
+			"active": "checked"
+		}
+	}
+},{
+	"title": "EXTERNAL ACCESS",
+	"values": {
+		"row1":{
+			"value": "International",
+			"active": "checked"
+		},
+		"row2":{
+			"value": "Domestic",
+			"active": ""
+		},
+		"row3":{
+			"value": "Landlines",
+			"active": ""
+		},
+		"row4":{
+			"value": "Mobile Phones",
+			"active": "checked"
+		}
+	}
+}]

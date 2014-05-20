@@ -1,0 +1,44 @@
+Edit <div ng-model="cosName" style="display:inline;">{{cosName}}</div> Class of Service
+<br/>
+<input type="text" class="roleEditInput" placeholder="Class of Service Name" 
+name="cos" ng-model="cosName" /> 
+
+<table ng-repeat="items in pagedItems">
+	<thead>
+		<tr>
+			<th colspan="2">{{items.title}}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in items.values">
+			<td style="width:200px;">{{item.value}}</td>
+			<td style="width:auto;"><input type='checkbox' ng-checked="item.active" /></td>
+		</tr>
+	</tbody>
+</table>
+<table id='tblExceptions'>
+	<thead>
+		<tr>
+			<th colspan="5">EXCEPTIONS</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td colspan="2"><input placeholder="Code" ng-model="searchString" /></td>
+			<td><input type='checkbox' checked="checked" /></td>
+			<td><input type='checkbox' /></td>
+			<td colspan="2"><button>Add</button></td>
+		</tr>
+		<tr ng-repeat="items in codes  | searchFor:searchString">
+			<td style="width:50px;">Code {{items.item}}</td>
+			<td style="width:80px;">{{items.allowed}}</td>
+			<td><button>Remove</button></td>
+		</tr>
+	</tbody>
+</table>
+<button ui-sref="cos">Back</button>
+<button>Done</button>
+
+
+
+

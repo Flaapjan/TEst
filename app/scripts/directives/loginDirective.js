@@ -16,8 +16,16 @@ angular
 });
 angular
 	.module('app')
+	.directive('maintDirective',function(){
+	return{
+		templateUrl:'partials/tpl/viewDataMain.tpl.html'
+	}
+});
+
+angular
+	.module('app')
 	.directive('cosDirective',function(){
 	return{
-		templateUrl:'partials/tpl/viewData.tpl.html'
+		templateUrl:'partials/tpl/viewDataCos.tpl.html'
 	}
 });
