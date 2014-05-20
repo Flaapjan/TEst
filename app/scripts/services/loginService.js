@@ -5,7 +5,20 @@ angular
 	.factory('loginService',function($http,$location){
 		return{
 			login:function(user){
-				var $promise=$http.post('data/user.php',user); //send data to user.php
+				
+				//var $promise = $http.post('http://localhost:8080/login',user); //send data to user.php
+				
+				var $promise = $http({
+					url: 'http://192.168.1.136:8080/login',
+					method: 'POST',
+					data: user,
+					transformRequest: false,
+					headers: {
+						'Authorization': 'Basic dGVzdDp0ZXN0',
+						'Content-Type': 'application/x-www-form-urlencoded'
+					}
+				});
+				
 				$promise.then(function(msg){
 					if(msg.data=='success'){
 						console.log('success login');

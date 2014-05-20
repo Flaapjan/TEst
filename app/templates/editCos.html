@@ -25,8 +25,8 @@ name="cos" ng-model="cosName" />
 	<tbody>
 		<tr>
 			<td colspan="2"><input placeholder="Code" ng-model="searchString" /></td>
-			<td><input type='checkbox' checked="checked" /></td>
-			<td><input type='checkbox' /></td>
+			<td><input type='checkbox' checked="checked" /> Allow</td>
+			<td><input type='checkbox' /> Block</td>
 			<td colspan="2"><button>Add</button></td>
 		</tr>
 		<tr ng-repeat="items in codes  | searchFor:searchString">

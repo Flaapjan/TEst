@@ -48,8 +48,6 @@ var app = angular
 			})
 	}])
 			
-
-
 	
 	
 	

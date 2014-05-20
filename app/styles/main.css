@@ -274,7 +274,10 @@ input{
 	border-right:0px;
 }
 
-
+.btnLogin:active{
+	background:#aaa;
+	color:#fff;
+}
 
 
 
