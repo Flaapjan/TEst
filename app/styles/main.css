@@ -10,6 +10,7 @@ body {
     margin:0px;
 	background:rgba(0,0,0,0.05);
 	font-family:Arial;
+	min-width:780px;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -202,7 +203,7 @@ table td,th{
 }
 table tr th{
 	text-align:left;
-	margin-top:20px;
+	padding-top:20px;
 }
 table tr td{
 	padding:10px 20px 10px 0px;

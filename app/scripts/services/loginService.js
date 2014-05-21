@@ -7,7 +7,8 @@ angular
 	
 		
 		return{
-			login:function(user){
+			login:function(userLogin){
+			/*
 				var found = false;
 				
 				$http.get('api/loginData.json')
@@ -23,13 +24,13 @@ angular
 							$rootScope.company = $rootScope.codes[x]['company'];
 							$rootScope.pic = $rootScope.codes[x]['pic'];
 							
-							if( user.emailAddress == $rootScope.email && $rootScope.password == user.password && !found ){
+							if( userLogin.emailAddress == $rootScope.email && $rootScope.password == userLogin.password && !found ){
 								console.log('You are now logged in. \nWelcome ' + $rootScope.name + ' ' + $rootScope.surname);
 								found = !found;
 									
 								if($rootScope.company.length > 1){
 									$state.go("selectBilling");
-									user($rootScope.codes[x]);
+									userLogin($rootScope.codes[x]);
 								}
 								else{
 									$state.go("profile");
@@ -43,23 +44,24 @@ angular
 						
 						
 					});
+				*/
 				
+				var $promise = $http.post('http://localhost:8000/authenticate',userLogin);
 				
-				
-				//console.log(user.emailAddress + ' - ' + user.password + ' - ' + user);
-				/*var $promise = $http.post('http://localhost:8080/login',user); //send data to user.php
-				
-				$promise.then(function(msg){
-					
-					
-					if(msg !== null) {
-						console.log('success login');
-						$state.go("selectBilling");
-						$('#logInOut').removeAttr('ui-sref-active').html("<a ui-sref='logout' href='#/logout'>Logout</a>");
-					}else{
-						console.log('error login - ' + msg.data );
+				$promise.then(function(msgLogin){
+					$rootScope.errorMsg = msgLogin.data;
+					if(msgLogin.data.length == 0) {
+						
+						var $userPromise = $http.post('http://localhost:8000/login',userLogin);
+						
+						$userPromise.then(function(msg){
+							$rootScope.loggedUser = msg.data;
+							
+							console.log('success login');
+							$state.go("selectBilling");
+						});
 					}
-				});*/
+				});
 			}
 		}
 	});

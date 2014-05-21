@@ -3,7 +3,8 @@
 var ctrl = angular
 	.module('app');
 	ctrl.controller('homeCtrl',['$scope','$rootScope','$http', function($scope, $rootScope, $http){
-		$rootScope.headTemplate = 'templates/nav.html';
+		//$rootScope.headTemplate = 'templates/nav.html';
+		$rootScope.headTemplate = 'templates/nav_log.html';
 		$rootScope.title = "Zaralab - Home";
 		$scope.title = "Home";
 		
@@ -12,7 +13,7 @@ var ctrl = angular
 			$scope.roleDesc = roleItem.roleDesc;
 		}
 		$scope.cos = function(cosItem){
-			$scope.cosName = cosItem.item;
+			$rootScope.cosVal = cosItem;
 		}
 		$scope.user = function(user){
 			$scope.email = user['email'];
@@ -22,6 +23,9 @@ var ctrl = angular
 			$scope.company = user['company'];
 			$scope.pic = user['pic'];
 			
+		}
+		$scope.tick = function(tickValue){
+			tickValue = !tickValue;
 		}
 	}]);
 
@@ -42,7 +46,7 @@ ctrl.controller('editCos',['$scope','$http', function($scope, $http){
 		   .then(function(res){
 				$scope.pagedItems = res.data;
 			});
-		$http.get('api/cosCode.json')
+		$http.get('api/cos.json')
 		   .then(function(res){
 				$scope.codes = res.data;
 			});

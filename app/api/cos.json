@@ -1,7 +1,55 @@
 [{
-	"item":"Class of Service"
+	"item":"Class of Service",
+	"internalAccess":{
+		"InternalCalls":true
+	},
+	"externalAccess":{
+		"International":true,
+		"Domestic":false,
+		"Landlines":false,
+		"MobilePhones":true
+	},
+	"exceptions":{
+		"code": [
+			"021",
+			"031",
+			"041"
+		]
+	}
 },{
-	"item":"Class of Service 2"
+	"item":"Class of Service 2",
+	"internalAccess":{
+		"InternalCalls":false
+	},
+	"externalAccess":{
+		"International":false,
+		"Domestic":true,
+		"Landlines":true,
+		"MobilePhones":false
+	},
+	"exceptions":{
+		"code": [
+			"011",
+			"082",
+			"076"
+		]
+	}
 },{
-	"item":"Class of Service 3"
+	"item":"Class of Service 3",
+	"internalAccess":{
+		"InternalCalls":true
+	},
+	"externalAccess":{
+		"International":false,
+		"Domestic":true,
+		"Landlines":true,
+		"MobilePhones":true
+	},
+	"exceptions":{
+		"code": [
+			"031",
+			"086",
+			"072"
+		]
+	}
 }]
