@@ -1,5 +1,6 @@
-function LogoutController($location) {
+function LogoutController($location,$rootScope) {
     //Session.clear();
-    $location.path('/home');
-	$('#logInOut').removeAttr('ui-sref-active').html("<a ui-sref='login' href='#/login'>Login</a>");
+    $location.path('/login');
+	$rootScope.headTemplate = 'templates/nav.html';
+	//$('input').value('');
 }

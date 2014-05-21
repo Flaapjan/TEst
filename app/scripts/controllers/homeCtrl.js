@@ -3,6 +3,7 @@
 var ctrl = angular
 	.module('app');
 	ctrl.controller('homeCtrl',['$scope','$rootScope','$http', function($scope, $rootScope, $http){
+		$rootScope.headTemplate = 'templates/nav.html';
 		$rootScope.title = "Zaralab - Home";
 		$scope.title = "Home";
 		
@@ -12,6 +13,15 @@ var ctrl = angular
 		}
 		$scope.cos = function(cosItem){
 			$scope.cosName = cosItem.item;
+		}
+		$scope.user = function(user){
+			$scope.email = user['email'];
+			$scope.password = user['password'];
+			$scope.name = user['name'];
+			$scope.surname = user['surname'];
+			$scope.company = user['company'];
+			$scope.pic = user['pic'];
+			
 		}
 	}]);
 
@@ -51,6 +61,26 @@ ctrl.controller('editRole',['$scope','$http', function($scope, $http){
 				$scope.pagedItems = res.data;
 			});
 	}])
+ctrl.controller('forgotPassCtrl',['$scope', function($scope){
+		$scope.title = "Forgot Password"
+	}])
+ctrl.controller('selectBilling',['$scope','$http', function($scope,$http){
+		$scope.title = "Select Billing Company"
+		
+		$http.get('api/billingCompany.json')
+		   .then(function(res){
+				$scope.items = res.data;
+			});
+			
+		$scope.logout = function(){
+			//Remove cookie and logout here
+			$state.go("login");
+		}
+	}])
+ctrl.controller('profileCtrl',['$scope', function($scope,$state){
+		$scope.title = "User Profile";
+	}])
+	
 
 
 // Create the instant search filter

@@ -1,19 +1,28 @@
 [
-	{ "username":"test1", "password":"123", "name":"Phillip-Juan", "surname":"van der Berg", "isSpecial":false },
-	{ "username":"test2", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":false },
-	{ "username":"test3", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":false },
-	{ "username":"test4", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":true },
-	{ "username":"test5", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":false },
-	{ "username":"test6", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":true },
-	{ "username":"test7", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":true },
-	{ "username":"test8", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":false },
-	{ "username":"test9", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":false },
-	{ "username":"test10", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":false },
-	{ "username":"test11", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":false },
-	{ "username":"test12", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":false },
-	{ "username":"test13", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":false },
-	{ "username":"test14", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":false },
-	{ "username":"test15", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":false },
-	{ "username":"test16", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":false },
-	{ "username":"test17", "password":"456", "name":"Sarah", "surname":"Labuschagne", "isSpecial":false }
+	{ 
+		"email":"test1@gmail.com", 
+		"password":"test1", 
+		"name":"Phillip-Juan", 
+		"surname":"van der Berg", 
+		"isSpecial":false,
+		"pic":"some image 1",
+		"company":[{
+			"name":"Comp1"
+		},{
+			"name":"Comp2"
+		},{
+			"name":"Comp3"
+		}]
+	},
+	{ 
+		"email":"test2@gmail.com", 
+		"password":"test2", 
+		"name":"Sarah", 
+		"surname":"Labuschagne", 
+		"isSpecial":false,
+		"pic":"what you looking at 2",
+		"company":[{
+			"name":"Comp1"
+		}]
+	}
 ]

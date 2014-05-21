@@ -1,5 +1,5 @@
-angular
-	.module("app")
+
+ctrl
 	.controller('cosCtrl',['$scope','$http', function($scope,$http){
 		$scope.title = 'Class of Service'
 		$scope.tableTitles = ['CLASS OF SERVICE'];
@@ -10,4 +10,4 @@ angular
 			.then(function(res){ 
 				$scope.pagedItems = res.data;
 			});
-	}]);
+	}]); 

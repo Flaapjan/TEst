@@ -135,6 +135,19 @@ ul{
 	float:none;
 	margin:0px 0px 20px 0px;
 }
+.nav li a{
+	text-decoration:none;
+	color:#fff;
+	
+}
+.nav li{
+	background:#0099CC;
+	padding:10px 20px;
+	margin:0px 10px 0px 0px;
+}
+.nav li:last-child{
+	margin:0px;
+}
 
 #footer{
 	line-height:60px;
@@ -229,7 +242,18 @@ table tfoot.maintain td span{
 	font-size:20px;
 	color:rgba(0,0,0,0.5);
 }
-
+.forgotPass{
+	font-size:12px;
+	padding-bottom:20px;
+}
+.forgotPass a{
+	color:#bbb;
+	text-decoration:none;
+}
+.forgotPass a:hover{
+	color:#0099CC;
+	cursor:pointer;
+}
 
 .remove,.edit{
 	font-size:10px;
@@ -279,7 +303,32 @@ input{
 	color:#fff;
 }
 
-
+.resetWrap,.msg{
+	margin:20px;
+}
+.msg{
+	padding:20px 30px;
+	background:#fff;
+	border-radius:2px;
+	border:1px solid #ababab;
+	color:#ababab;
+	text-align:center;
+}
+select.ddBilling{
+	padding:10px 20px;
+	outline:0px;
+	width:200px;
+}
+.billingBtnGroup{
+	width:200px;
+	margin-bottom:20px;
+}
+.billingBtnGroup button{
+	width:45%;
+}
+.billingBtnGroup button:last-child{
+	float:right;
+}
 
 
 

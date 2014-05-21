@@ -4,7 +4,8 @@ var app = angular
 	])
 	.config(['$urlRouterProvider','$stateProvider','$httpProvider', function($urlRouterProvider,$stateProvider,$httpProvider){
 		delete $httpProvider.defaults.headers.common['X-Requested-With'];
-		$urlRouterProvider.otherwise('/');
+		//$urlRouterProvider.otherwise('/login');//if Cookie does not exist
+		$urlRouterProvider.otherwise('/');//if Cookie exists
 		$stateProvider
 			.state('home', {
 				url: '/',
@@ -41,10 +42,25 @@ var app = angular
 				templateUrl: 'templates/login.html',
 				controller: 'loginCtrl'
 			})
+			.state('forgotPass', {
+				url: '/login/forgot_password',
+				templateUrl: 'templates/forgotpass.html',
+				controller: 'forgotPassCtrl'
+			})
+			.state('selectBilling', {
+				url: '/login/selectBilling',
+				templateUrl: 'templates/selectBilling.html',
+				controller: 'selectBilling'
+			})
 			.state('logout', {
 				url: '/logout',
 				templateUrl: 'templates/logout.html',
 				controller: 'LogoutController'
+			})
+			.state('profile', {
+				url: '/profile/:user',
+				templateUrl: 'templates/profile.html',
+				controller: 'profileCtrl'
 			})
 	}])
 			

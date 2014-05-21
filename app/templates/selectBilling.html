@@ -1,0 +1,11 @@
+<h3>{{title}}</h3>
+
+<select class='ddBilling'>
+	<option ng-repeat="item in items">{{item.name}}</option>
+</select>
+<br/>
+<br/>
+<div class="billingBtnGroup">
+	<button ui-sref="profile({user:'Phillip'})">Login</button>
+	<button ui-sref="login" ng-click='logout'>Back</button>
+</div>
