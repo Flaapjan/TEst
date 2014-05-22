@@ -5,11 +5,11 @@
 </div>
 <div class='resetWrap'>
 	<form role='form' name='myForm'>
-		<input type='email' placeholder='Email' />
+		<input type='email' placeholder='Email' ng-model='user.email' />
 		<br/>
 		<br/>
 		<button class='btn' ui-sref='login'>Back</button>
-		<button class='btn' ng-click='' ng-disabled='myForm.$invalid'>Submit</button>
+		<button class='btn' ng-click='forgotPassword(user)' ng-disabled='myForm.$invalid'>Submit</button>
 	</form>
 </div>
 
