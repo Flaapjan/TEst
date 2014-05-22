@@ -19,7 +19,9 @@ describe('User forgot password', function() {
     });
 
     it('should redirect user to login if he/she remembers their password', function() {
-        
+        var ptor = protractor.getInstance();
+        ptor.findElement(protractor.By.className('back-button')).click();
+        expect(ptor.getCurrentUrl()).toContain('/#/'); //hmmmmmmm
     });
     
 });
