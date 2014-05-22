@@ -1,20 +1,38 @@
+'use strict';
 
-ctrl.controller('forgotPassCtrl',['$scope', function($scope){
-		$scope.title = "Forgot Password",
-		
-		$scope.forgotPassword = function(user){
-			var $promise = $http.post('http://localhost:8000/forgotpassword',userLogin);
+
+var ctrl = angular
+	.module('app')
+	.factory('forgotPass',function($http,$rootScope){
+		return{
+			getPass:function(user){
+				var test = user;
+				//console.log(test + ' - ' + test.email + ' - ');
+				
+				
+				
+					$.each(user, function(k, v) {
+						console.log(k + ' is ' + v + '\n');
+					});
+				
+				var $promise = $http.post('http://localhost:8080/forgotpassword',user);
+				
+				$promise.then(function(msg){
+					$.each(msg, function(k, v) {
+						console.log(k + ' is ' + v + '\n');
+					});
 					
-			$promise.then(function(msgLogin){
-				$rootScope.errorMsg = msgLogin.data;
-				if(msgLogin.data.length == 0) {
+					//if( msg.data )
+					console.log('Forgot Password: ' + msg);
 					
-					
-					$rootScope.loggedUser = msg.data;
-					
-					console.log('success login');
-					$state.go("selectBilling");
-				}
-			});
+				});
+			}
 		}
-	}]) 
+	});
+
+ctrl.controller('forgotPassCtrl',['$scope','forgotPass', function($scope,forgotPass){
+		$scope.title = "Forgot Password",
+		$scope.getPass = function(){
+			forgotPass.getPass($scope.user);
+		};
+	}])

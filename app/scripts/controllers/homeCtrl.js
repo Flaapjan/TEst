@@ -7,21 +7,21 @@ var ctrl = angular
 		$rootScope.headTemplate = 'templates/nav_log.html';
 		$rootScope.title = "Zaralab - Home";
 		$scope.title = "Home";
+		$scope.user;
 		
 		$scope.role = function(roleItem){
-			$scope.userRole = roleItem.item;
-			$scope.roleDesc = roleItem.roleDesc;
+			$scope.editRole = roleItem;
 		}
 		$scope.cos = function(cosItem){
 			$rootScope.cosVal = cosItem;
 		}
-		$scope.user = function(user){
-			$scope.email = user['email'];
-			$scope.password = user['password'];
-			$scope.name = user['name'];
-			$scope.surname = user['surname'];
-			$scope.company = user['company'];
-			$scope.pic = user['pic'];
+		$scope.userValue = function(user){
+			$rootScope.user.email = "1";
+			$rootScope.user.password = "2";
+			$rootScope.user.name = "3";
+			$rootScope.user.surname = "4";
+			$rootScope.user.company = "5";
+			$rootScope.user.pic = "6";
 			
 		}
 		$scope.tick = function(tickValue){
