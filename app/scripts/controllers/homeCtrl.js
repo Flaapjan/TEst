@@ -40,17 +40,6 @@ ctrl.controller('roleCtrl',['$scope','$http', function($scope, $http){
 				$scope.pagedItems = res.data; 
 			});
 	}])
-ctrl.controller('editCos',['$scope','$http', function($scope, $http){
-		
-		$http.get('api/cosSettings.json')
-		   .then(function(res){
-				$scope.pagedItems = res.data;
-			});
-		$http.get('api/cos.json')
-		   .then(function(res){
-				$scope.codes = res.data;
-			});
-	}])
 ctrl.controller('addCos',['$scope','$http', function($scope, $http){
 		
 		$http.get('api/cosSettings.json')
@@ -64,9 +53,6 @@ ctrl.controller('editRole',['$scope','$http', function($scope, $http){
 		   .then(function(res){
 				$scope.pagedItems = res.data;
 			});
-	}])
-ctrl.controller('forgotPassCtrl',['$scope', function($scope){
-		$scope.title = "Forgot Password"
 	}])
 ctrl.controller('selectBilling',['$scope','$http', function($scope,$http){
 		$scope.title = "Select Billing Company"

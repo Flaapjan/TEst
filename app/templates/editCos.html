@@ -12,7 +12,7 @@ name="cos" ng-model="cosVal.item" />
 	<tbody>
 		<tr>
 			<td style="width:200px;">International Calls</td>
-			<td style="width:auto;"><input type='checkbox' ng-checked="cosVal.internalAccess.InternalCalls" /></td>
+			<td style="width:auto;"><input type='checkbox' ng-model="cosVal.internalAccess.InternalCalls" /></td>
 		</tr>
 	</tbody>
 	<thead>
@@ -23,19 +23,19 @@ name="cos" ng-model="cosVal.item" />
 	<tbody>
 		<tr>
 			<td style="width:200px;">International</td>
-			<td style="width:auto;"><input type='checkbox' ng-checked="cosVal.externalAccess.International" <!--ng-change="tick(cosVal.externalAccess.International)"--> />{{cosVal.externalAccess.International}}</td>
+			<td style="width:auto;"><input type='checkbox' ng-model="cosVal.externalAccess.International"/></td>
 		</tr>
 		<tr>
 			<td style="width:200px;">Domestic</td>
-			<td style="width:auto;"><input type='checkbox' ng-checked="cosVal.externalAccess.Domestic" /></td>
+			<td style="width:auto;"><input type='checkbox' ng-model="cosVal.externalAccess.Domestic" /></td>
 		</tr>
 		<tr>
 			<td style="width:200px;">Landlines</td>
-			<td style="width:auto;"><input type='checkbox' ng-checked="cosVal.externalAccess.Landlines" /></td>
+			<td style="width:auto;"><input type='checkbox' ng-model="cosVal.externalAccess.Landlines" /></td>
 		</tr>
 		<tr>
 			<td style="width:200px;">Mobile Phones</td>
-			<td style="width:auto;"><input type='checkbox' ng-checked="cosVal.externalAccess.MobilePhones" /></td>
+			<td style="width:auto;"><input type='checkbox' ng-model="cosVal.externalAccess.MobilePhones" /></td>
 		</tr>
 	</tbody>
 	
@@ -61,7 +61,7 @@ name="cos" ng-model="cosVal.item" />
 	</tbody>
 </table>
 <button ui-sref="cos">Back</button>
-<button>Done</button>
+<button  ng-click="addPost(cosVal.item,cosVal.internalAccess.InternalCalls)">Done</button>
 
 
 
