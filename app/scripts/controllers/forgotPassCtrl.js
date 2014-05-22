@@ -2,7 +2,7 @@
 ctrl.controller('forgotPassCtrl',['$scope', function($scope){
 		$scope.title = "Forgot Password",
 		
-		var $promise = $http.post('http://localhost:8000/authenticate',userLogin);
+		var $promise = $http.post('http://localhost:8000/forgotpassword',userLogin);
 				
 				$promise.then(function(msgLogin){
 					$rootScope.errorMsg = msgLogin.data;
@@ -18,4 +18,4 @@ ctrl.controller('forgotPassCtrl',['$scope', function($scope){
 						});
 					}
 				});
-	}])
+	}]) 

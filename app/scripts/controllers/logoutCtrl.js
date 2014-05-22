@@ -4,4 +4,4 @@ function LogoutController($location,$rootScope) {
 	$rootScope.headTemplate = 'templates/nav.html';
 	$rootScope.loggedUser = "";
 	//$('input').value(''); 
-}
+} 

@@ -53,7 +53,7 @@ ctrl.controller('editRole',['$scope','$http', function($scope, $http){
 		   .then(function(res){
 				$scope.pagedItems = res.data;
 			});
-	}])
+	}]) 
 ctrl.controller('selectBilling',['$scope','$http', function($scope,$http){
 		$scope.title = "Select Billing Company"
 		

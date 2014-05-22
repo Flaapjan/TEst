@@ -45,7 +45,7 @@ var app = angular
 			.state('forgotPass', {
 				url: '/login/forgot_password',
 				templateUrl: 'templates/forgotpass.html',
-				controller: 'forgotPassCtrl'
+				controller: 'forgotPassCtrl' 
 			})
 			.state('selectBilling', {
 				url: '/login/selectBilling',

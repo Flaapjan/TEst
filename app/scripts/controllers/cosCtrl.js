@@ -4,7 +4,7 @@ ctrl
 		$scope.title = 'Class of Service'
 		$scope.tableTitles = ['CLASS OF SERVICE'];
 		$scope.choice = 'cos';
-		
+		 
 		
 		$http.get('api/cos.json')
 			.then(function(res){ 
