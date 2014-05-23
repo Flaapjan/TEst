@@ -30,37 +30,40 @@ describe('User login', function() {
         
     });
     
-    it('should indicate incorrect credentials error due to email and password being wrong', function() {
+    //TO-DO: complete
+    /*it('should indicate incorrect credentials error due to email and password being wrong', function() {
         
         
-    });
+    });*/
 
-    it('should indicate incorrect credentials error due to wrong password', function() {
+    //TO-DO: complete
+    /*it('should indicate incorrect credentials error due to wrong password', function() {
 
         var email = element(by.model('userLogin.emailAddress'));
-        email.sendKeys('test@gmail.com');
+        email.sendKeys('med@email.com');
 
         var password = element(by.model('userLogin.password'));
         password.sendKeys('456');
 
         var ptor = protractor.getInstance();
-        var emailError = ptor.findElement(protractor.By.className('error'));
-        //expect(emailError.isDisplayed().toBeTruthy());
-        console.log(emailError.isDisplayed());
-        //emailError.getText().toMatch("Incorrect password or login email entered");
+        ptor.findElement(protractor.By.className('btn-default')).click().then(function(){
+            browser.waitForAngular();
+            var errorMessage = browser.findElement(by.css('.error-message'));
+            expect(errorMessage.getText()).toBe('Incorrect password or login email entered');
+        });
+    });*/
 
-    });
-
-    it('should indicate incorrect credentials error due to wrong email', function() {
+    //TO-DO: complete
+    /*it('should indicate incorrect credentials error due to wrong email', function() {
         var email = element(by.model('userLogin.emailAddress'));
         email.sendKeys('test324@gmail.com');
 
         var password = element(by.model('userLogin.password'));
         password.sendKeys('123');
 
-        //var ptor = protractor.getInstance();
-        //var emailError = ptor.findElement(protractor.By.className('error'));
-    });
+        var ptor = protractor.getInstance();
+        var emailError = ptor.findElement(protractor.By.className('error-message'));
+    });*/
 
     it('should redirect user to home page if he or she wishes to not log in', function() {
 

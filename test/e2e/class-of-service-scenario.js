@@ -8,11 +8,11 @@ describe('User views, creates, deletes and edits class of services', function() 
         browser.get('#/login');
     });
 
-    it('should show correct results when admin enters correct search value', function() {
+    it('should show correct results when admin enters existing class of service', function() {
         
     });
     
-    it('should show correct results when admin enters incorrect search value', function() {
+    it('should show correct results when admin enters non-existing class of service', function() {
         
     });
 
