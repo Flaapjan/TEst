@@ -12,6 +12,8 @@ angular
 					$rootScope.errorMsg = msgLogin.data;
 					if(msgLogin.data.length == 0) {
 						
+						$rootScope.headTemplate = 'templates/nav_log.html';
+						
 						var $userPromise = $http.post('http://localhost:8080/login',userLogin);
 						
 						$userPromise.then(function(msg){

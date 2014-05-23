@@ -76,7 +76,6 @@ ctrl.controller('selectBilling',['$scope','$http', function($scope,$http){
 			});
 			
 		$scope.logout = function(){
-			//Remove cookie and logout here
 			$state.go("login");
 		}
 	}])
