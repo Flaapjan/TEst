@@ -37,7 +37,7 @@ describe('User login', function() {
     });*/
 
     //TO-DO: complete
-    /*it('should indicate incorrect credentials error due to wrong password', function() {
+    it('should indicate incorrect credentials error due to wrong password', function() {
 
         var email = element(by.model('userLogin.emailAddress'));
         email.sendKeys('med@email.com');
@@ -48,10 +48,13 @@ describe('User login', function() {
         var ptor = protractor.getInstance();
         ptor.findElement(protractor.By.className('btn-default')).click().then(function(){
             browser.waitForAngular();
-            var errorMessage = browser.findElement(by.css('.error-message'));
-            expect(errorMessage.getText()).toBe('Incorrect password or login email entered');
+            //var errorMessage = browser.findElement(by.css('.error-message'));
+            //var errorMessage = element(by.model('errorMsg'))
+            //expect(errorMessage.toMatch('Incorrect password or login email entered'));
+            //expect(element(by.binding('errorMsg')).getText().toMatch('Incorrect password or login email entered'));
+            //var errorMessage = element(by.binding('errorMsg')).getText();
         });
-    });*/
+    });
 
     //TO-DO: complete
     /*it('should indicate incorrect credentials error due to wrong email', function() {

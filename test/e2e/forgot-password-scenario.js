@@ -15,7 +15,7 @@ describe('User forgot password', function() {
     });
     
     it('should notify user that email address entered does not exist', function() {
-        
+        //TO DO
     });
 
     it('should redirect user to login if he/she remembers their password', function() {

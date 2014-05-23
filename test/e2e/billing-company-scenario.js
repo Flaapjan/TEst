@@ -9,19 +9,19 @@ describe('User chooses billing company', function() {
     });
 
     it('should update the combo box to the users choice', function() {
-        
+        //TO DO
     });
     
     it('should redirect user to his company profile page if so selected', function() {
-        
+        //TO DO
     });
     
     it('should redirect user to his personal profile page if so selected', function() {
-        
+        //TO DO
     });
     
     it('should not allow user to proceed to profile until a billing option is selected', function() {
-        
+        //TO DO
     });
 
 });
