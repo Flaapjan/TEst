@@ -10,9 +10,22 @@ var ctrl = angular
 		$scope.user;
 		
 		$scope.role = function(roleItem){
+			
+			if(typeof roleItem === 'undefined')
+				$scope.type = "Add";
+			else
+				$scope.type = "Edit";
+				
+			
 			$scope.editRole = roleItem;
 		}
 		$scope.cos = function(cosItem){
+			
+			if(typeof cosItem === 'undefined')
+				$scope.type = "Add";
+			else
+				$scope.type = "Edit";
+			
 			$rootScope.cosVal = cosItem;
 		}
 		$scope.userValue = function(user){

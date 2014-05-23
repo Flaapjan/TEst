@@ -5,26 +5,12 @@ var ctrl = angular
 	.module('app')
 	.factory('forgotPass',function($http,$rootScope){
 		return{
-			getPass:function(user){
-				var test = user;
-				//console.log(test + ' - ' + test.email + ' - ');
-				
-				
-				
-					$.each(user, function(k, v) {
-						console.log(k + ' is ' + v + '\n');
-					});
-				
+			getPass:function(user){				
 				var $promise = $http.post('http://localhost:8080/forgotpassword',user);
 				
-				$promise.then(function(msg){
-					$.each(msg, function(k, v) {
-						console.log(k + ' is ' + v + '\n');
-					});
-					
-					//if( msg.data )
+				$promise.then(function(msg){					
+					$rootScope.Password = "Your password has been sent via email. " + msg.data;
 					console.log('Forgot Password: ' + msg);
-					
 				});
 			}
 		}

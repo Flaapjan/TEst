@@ -3,55 +3,205 @@
 		"item": "System Administrator",
 		"roleDesc": "Top-level access to everything.",
 		"application":{
-			"userRoleManager":false,
-			"userManager":false,
-			"companyManager":true,
-			"interactionManager":true,
-			"callCenter":false
+			"companyManager":{
+				"edit":true,
+				"delete":true,
+				"readOnly":true
+			},
+			"userManager":{
+				"edit":false,
+				"delete":false,
+				"readOnly":true
+			},
+			"cosManager":{
+				"edit":false,
+				"delete":false,
+				"readOnly":true
+			},
+			"interactionManager":{
+				"edit":true,
+				"delete":true,
+				"readOnly":true
+			},
+			"agentDashboard":{
+				"edit":true,
+				"delete":false,
+				"readOnly":false
+			},
+			"teamLeaderDashboard":{
+				"edit":false,
+				"delete":true,
+				"readOnly":false
+			},
+			"managerDashboard":{
+				"edit":false,
+				"delete":false,
+				"readOnly":true
+			}
 		}
 	},
 	{
 		"item": "Administrator",
 		"roleDesc": "Mid-level access, can create and edit users.",
 		"application":{
-			"userRoleManager":true,
-			"userManager":true,
-			"companyManager":false,
-			"interactionManager":false,
-			"callCenter":false
+			"companyManager":{
+				"edit":true,
+				"delete":true,
+				"readOnly":true
+			},
+			"userManager":{
+				"edit":false,
+				"delete":false,
+				"readOnly":true
+			},
+			"cosManager":{
+				"edit":false,
+				"delete":false,
+				"readOnly":true
+			},
+			"interactionManager":{
+				"edit":true,
+				"delete":true,
+				"readOnly":true
+			},
+			"agentDashboard":{
+				"edit":true,
+				"delete":false,
+				"readOnly":false
+			},
+			"teamLeaderDashboard":{
+				"edit":false,
+				"delete":true,
+				"readOnly":false
+			},
+			"managerDashboard":{
+				"edit":false,
+				"delete":false,
+				"readOnly":true
+			}
 		}
 	},
 	{
 		"item": "Agent",
 		"roleDesc": "Use of the software. Limited access.",
 		"application":{
-			"userRoleManager":true,
-			"userManager":true,
-			"companyManager":true,
-			"interactionManager":true,
-			"callCenter":true
+			"companyManager":{
+				"edit":true,
+				"delete":true,
+				"readOnly":true
+			},
+			"userManager":{
+				"edit":false,
+				"delete":false,
+				"readOnly":true
+			},
+			"cosManager":{
+				"edit":false,
+				"delete":false,
+				"readOnly":true
+			},
+			"interactionManager":{
+				"edit":true,
+				"delete":true,
+				"readOnly":true
+			},
+			"agentDashboard":{
+				"edit":true,
+				"delete":false,
+				"readOnly":false
+			},
+			"teamLeaderDashboard":{
+				"edit":false,
+				"delete":true,
+				"readOnly":false
+			},
+			"managerDashboard":{
+				"edit":false,
+				"delete":false,
+				"readOnly":true
+			}
 		}
 	},
 	{
 		"item": "Team Leader",
 		"roleDesc": "Manager of agents, more access than agents, but less than managers.",
 		"application":{
-			"userRoleManager":false,
-			"userManager":false,
-			"companyManager":false,
-			"interactionManager":false,
-			"callCenter":false
+			"companyManager":{
+				"edit":true,
+				"delete":true,
+				"readOnly":true
+			},
+			"userManager":{
+				"edit":false,
+				"delete":false,
+				"readOnly":true
+			},
+			"cosManager":{
+				"edit":false,
+				"delete":false,
+				"readOnly":true
+			},
+			"interactionManager":{
+				"edit":true,
+				"delete":true,
+				"readOnly":true
+			},
+			"agentDashboard":{
+				"edit":true,
+				"delete":false,
+				"readOnly":false
+			},
+			"teamLeaderDashboard":{
+				"edit":false,
+				"delete":true,
+				"readOnly":false
+			},
+			"managerDashboard":{
+				"edit":false,
+				"delete":false,
+				"readOnly":true
+			}
 		}
 	},
 	{
 		"item": "Manager",
 		"roleDesc": "Manager of team leaders and agents. More access than tea leaders, less than admins.",
 		"application":{
-			"userRoleManager":true,
-			"userManager":false,
-			"companyManager":false,
-			"interactionManager":false,
-			"callCenter":false
+			"companyManager":{
+				"edit":true,
+				"delete":true,
+				"readOnly":true
+			},
+			"userManager":{
+				"edit":false,
+				"delete":false,
+				"readOnly":true
+			},
+			"cosManager":{
+				"edit":false,
+				"delete":false,
+				"readOnly":true
+			},
+			"interactionManager":{
+				"edit":true,
+				"delete":true,
+				"readOnly":true
+			},
+			"agentDashboard":{
+				"edit":true,
+				"delete":false,
+				"readOnly":false
+			},
+			"teamLeaderDashboard":{
+				"edit":false,
+				"delete":true,
+				"readOnly":false
+			},
+			"managerDashboard":{
+				"edit":false,
+				"delete":false,
+				"readOnly":true
+			}
 		}
 	}
 ]

@@ -1,5 +1,6 @@
 
-ctrl
+var ctrl = angular.
+	module('app')
 	.controller('cosCtrl',['$scope','$http', function($scope,$http){
 		$scope.title = 'Class of Service'
 		$scope.tableTitles = ['CLASS OF SERVICE'];

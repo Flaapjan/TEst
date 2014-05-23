@@ -1,35 +1,71 @@
-Edit <div ng-model="userRole" style="display:inline;">{{editRole.item}}</div> role
+{{type}} <div ng-model="userRole" style="display:inline;">{{editRole.item}}</div> role
 <br/>
 <input type="text" class="roleEditInput" placeholder="User role name" 
 name="userRole" ng-model="editRole.item" /> 
 <br/>
 <input type="text" class="roleEditInput" placeholder="User role description" name="roleDesc" ng-model="editRole.roleDesc" />
 
-<table>
+<table class='roles'>
 	<thead>
-		<th>ALLOW</th>
 		<th>APPLICATION</th>
+		<th>ALLOW</th>
 	</thead>
 	<tbody>
 		<tr>
-			<td style="width:20px"><input type="checkbox" ng-model="editRole.application.userRoleManager" /></td>
-			<td style="width:auto">User Role Manager</td>
-		</tr>
-		<tr>
-			<td style="width:20px"><input type="checkbox" ng-model="editRole.application.userManager" /></td>
-			<td style="width:auto">User Manager</td>
-		</tr>
-		<tr>
-			<td style="width:20px"><input type="checkbox" ng-model="editRole.application.companyManager" /></td>
 			<td style="width:auto">Company Manager</td>
+			<td style="width:20px">
+				<label><input type="checkbox" ng-model="editRole.application.companyManager.edit" /> Edit</label>
+				<label><input type="checkbox" ng-model="editRole.application.companyManager.delete" /> Remove</label>
+				<label><input type="checkbox" ng-model="editRole.application.companyManager.readOnly" /> Read only</label>
+			</td>
 		</tr>
 		<tr>
-			<td style="width:20px"><input type="checkbox" ng-model="editRole.application.interactionManager" /></td>
+			<td style="width:auto">User Manager</td>
+			<td style="width:20px">
+				<label><input type="checkbox" ng-model="editRole.application.userManager.edit" /> Edit</label>
+				<label><input type="checkbox" ng-model="editRole.application.userManager.delete" /> Remove</label>
+				<label><input type="checkbox" ng-model="editRole.application.userManager.readOnly" /> Read only</label>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:auto">Class of Service Manager</td>
+			<td style="width:20px">
+				<label><input type="checkbox" ng-model="editRole.application.cosManager.edit" /> Edit</label>
+				<label><input type="checkbox" ng-model="editRole.application.cosManager.delete" /> Remove</label>
+				<label><input type="checkbox" ng-model="editRole.application.cosManager.readOnly" /> Read only</label>
+			</td>		
+		</tr>
+		<tr>
 			<td style="width:auto">Interaction Manager</td>
+			<td style="width:20px">
+				<label><input type="checkbox" ng-model="editRole.application.interactionManager.edit" /> Edit</label>
+				<label><input type="checkbox" ng-model="editRole.application.interactionManager.delete" /> Remove</label>
+				<label><input type="checkbox" ng-model="editRole.application.interactionManager.readOnly" /> Read only</label>
+			</td>
 		</tr>
 		<tr>
-			<td style="width:20px"><input type="checkbox" ng-model="editRole.application.callCenter" /></td>
-			<td style="width:auto">Call Center</td>
+			<td style="width:auto">Client Services Manager(Agent Dashboard)</td>
+			<td style="width:20px">
+				<label><input type="checkbox" ng-model="editRole.application.agentDashboard.edit" /> Edit</label>
+				<label><input type="checkbox" ng-model="editRole.application.agentDashboard.delete" /> Remove</label>
+				<label><input type="checkbox" ng-model="editRole.application.agentDashboard.readOnly" /> Read only</label>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:auto">Client Services Manager(Team Leader Dashboard)</td>
+			<td style="width:20px">
+				<label><input type="checkbox" ng-model="editRole.application.teamLeaderDashboard.edit" /> Edit</label>
+				<label><input type="checkbox" ng-model="editRole.application.teamLeaderDashboard.delete" /> Remove</label>
+				<label><input type="checkbox" ng-model="editRole.application.teamLeaderDashboard.readOnly" /> Read only</label>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:auto">Client Services Manager(Manager's Dashboard)</td>
+			<td style="width:20px">
+				<label><input type="checkbox" ng-model="editRole.application.managerDashboard.edit" /> Edit</label>
+				<label><input type="checkbox" ng-model="editRole.application.managerDashboard.delete" /> Remove</label>
+				<label><input type="checkbox" ng-model="editRole.application.managerDashboard.readOnly" /> Read only</label>
+			</td>
 		</tr>
 	</tbody>
 	<tfoot>
