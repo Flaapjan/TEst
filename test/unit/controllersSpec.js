@@ -68,5 +68,4 @@ describe('BillingCompanyCtrl',function(){
 			
 		})
 	})
-})
- 
+});

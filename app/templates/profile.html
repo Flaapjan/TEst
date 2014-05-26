@@ -1,5 +1,11 @@
-{{title}}<br/>
-{{userValue.email}}<br/>
-{{userValue.name}}<br/>
-{{userValue.surname}}<br/>
-{{userValue.pic}}<br/>
+{{title}}
+<div id='profileType' ui-view>
+	Call template templates/home.html
+</div>
+<ul>
+	<li>{{comp.billingCompanyId}}</li>
+	<li>{{user.firstName}}</li>
+	<li>{{user.surname}}</li>
+	<li>{{user.emailAddress}}</li>
+	<li>{{user.pic}}</li>
+</ul>

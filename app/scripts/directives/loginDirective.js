@@ -29,3 +29,11 @@ angular
 		templateUrl:'partials/tpl/viewDataCos.tpl.html'
 	}
 });
+
+angular
+	.module('app')
+	.directive('sysAdminDirective',function(){
+	return{
+		templateUrl:'templates/home.html'
+	}
+});

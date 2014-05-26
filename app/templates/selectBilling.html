@@ -1,11 +1,22 @@
 <h3>{{title}}</h3>
 
-<select class='ddBilling'>
-	<option ng-repeat="item in items">{{item.name}}</option>
+<select class='ddBilling' ng-model="myOption" ng-change="setCompany()">
+	<option ng-repeat="item in items"  selected="selected" value='{{item}}'>{{item.companyDescription}}</option>
 </select>
+
+<!--select class='ddBilling' ng-change="setCompany(items.billingCompanyId)"
+            ng-options="item.companyDescription as item.companyDescription for item in items"
+            ng-model="item" ng-init="item.companyDescription = items[0].companyDescription"></select-->
+
 <br/>
 <br/>
 <div class="billingBtnGroup">
-	<button ui-sref="profile({user:'Phillip'})">Login</button>
-	<button ui-sref="login" ng-click='logout'>Back</button>
+	<!--input type='button' ui-sref="login" ng-click='logout' value='Back' /-->
+	<input type='submit' ui-sref="profile" value='Continue' disabled id='btnSelectBillingCompany' />
 </div>
+
+<!--
+
+ ng-change="setCompany({{items.billingCompanyId)}}"
+
+-->

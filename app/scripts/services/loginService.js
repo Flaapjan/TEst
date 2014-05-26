@@ -5,22 +5,40 @@ angular
 	.factory('loginService',function($http,$state,$rootScope){
 		return{
 			login:function(userLogin){
-				
 				var $promise = $http.post('http://localhost:8080/authenticate',userLogin);
 				
 				$promise.then(function(msgLogin){
 					$rootScope.errorMsg = msgLogin.data;
 					if(msgLogin.data.length == 0) {
-						
-						$rootScope.headTemplate = 'templates/nav_log.html';
-						
-						var $userPromise = $http.post('http://localhost:8080/login',userLogin);
+						var currentUser = userLogin;
+						//console.log(msgLogin.data);
+						var $userPromise = $http.post('http://localhost:8080/login',currentUser);
 						
 						$userPromise.then(function(msg){
 							$rootScope.loggedUser = msg.data;
+							//console.log(msg.data);
+							var $billingPromise = $http.post('http://localhost:8080/billingCompanies',msg.data);
 							
-							console.log('success login');
-							$state.go("selectBilling");
+								$rootScope.user = msg.data;
+							
+							//console.log('logged in');
+							var billingMsg;
+							
+							$billingPromise.then(function(billingMsg){
+								$rootScope.billingCompanies = billingMsg.data;
+								$rootScope.headTemplate = 'templates/nav_log.html';
+								
+								//console.log(billingMsg.data);
+								
+								if(billingMsg.data.length > 1) {
+									$state.go("selectBilling");
+								}
+								else{
+									$rootScope.billingCompanies = billingMsg.data;
+									$state.go("profile");
+								}
+							});
+							
 						});
 					}
 				});

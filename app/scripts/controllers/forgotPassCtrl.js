@@ -9,7 +9,7 @@ var ctrl = angular
 				var $promise = $http.post('http://localhost:8080/forgotpassword',user);
 				
 				$promise.then(function(msg){					
-					$rootScope.Password = "Your password has been sent via email. " + msg.data;
+					$rootScope.Password = msg.data;
 					console.log('Forgot Password: ' + msg);
 				});
 			}
