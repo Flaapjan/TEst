@@ -53,3 +53,20 @@ describe('ForgotPassCtrl', function(){
     
 });
 
+describe('BillingCompanyCtrl',function(){
+	var scope, ctrl, $httpBackend;
+	
+	beforeEach(module('app'));
+	
+	beforeEach(inject(function($controller){
+		$controller("selectBilling");
+	}))
+	
+	describe("selectBilling",function(){
+		it("should show a list of compaies linked to user",function(){
+			
+			
+		})
+	})
+})
+

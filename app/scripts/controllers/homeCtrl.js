@@ -16,7 +16,6 @@ var ctrl = angular
 			else
 				$scope.type = "Edit";
 				
-			
 			$scope.editRole = roleItem;
 		}
 		$scope.cos = function(cosItem){
@@ -28,18 +27,10 @@ var ctrl = angular
 			
 			$rootScope.cosVal = cosItem;
 		}
-		$scope.userValue = function(user){
-			$rootScope.user.email = "1";
-			$rootScope.user.password = "2";
-			$rootScope.user.name = "3";
-			$rootScope.user.surname = "4";
-			$rootScope.user.company = "5";
-			$rootScope.user.pic = "6";
-			
-		}
 		$scope.tick = function(tickValue){
 			tickValue = !tickValue;
 		}
+		
 	}]);
 
 	
@@ -67,20 +58,29 @@ ctrl.controller('editRole',['$scope','$http', function($scope, $http){
 				$scope.pagedItems = res.data;
 			});
 	}]) 
-ctrl.controller('selectBilling',['$scope','$http', function($scope,$http){
+ctrl.controller('selectBilling',['$scope','$http','$rootScope', function($scope,$http,$rootScope){
 		$scope.title = "Select Billing Company"
 		
-		$http.get('api/billingCompany.json')
-		   .then(function(res){
-				$scope.items = res.data;
-			});
+		$scope.items = $rootScope.billingCompanies;
+		$scope.loggedCompany =  $rootScope.billingCompanies;
+		//console.log($scope.loggedCompany);
+		$scope.setCompany = function(val1){
+			$rootScope.comp = $scope.myOption;
 			
-		$scope.logout = function(){
-			$state.go("login");
+			$('#btnSelectBillingCompany').removeAttr('disabled');
 		}
 	}])
-ctrl.controller('profileCtrl',['$scope', function($scope,$state){
+ctrl.controller('profileCtrl',['$scope','$rootScope','$state','$compile', function($scope,$rootScope,$state,$compile){
 		$scope.title = "User Profile";
+		
+		if( !$rootScope.user){
+			$state.go("login");
+		}
+		else if( $rootScope.user.userRole.description == 'System Administrator' ){
+			//$('#profileType').attr('sysAdmin-directive').html('Call template templaes/home.html');
+			
+		}
+		//console.log($rootScope.user.userRole.description);
 	}])
 	
 
