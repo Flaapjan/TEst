@@ -16,8 +16,10 @@ angular
 							$rootScope.loggedUser = msg.data;
 							var $billingPromise = $http.post('http://localhost:8080/billingCompanies',msg.data);
 							$rootScope.user = msg.data;
+							console.log(msg.data);
 							var billingMsg;
 							$billingPromise.then(function(billingMsg){
+								console.log(billingMsg.data);
 								$rootScope.billingCompanies = billingMsg.data;
 								$rootScope.headTemplate = 'templates/nav_log.html';
 								
