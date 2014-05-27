@@ -58,14 +58,14 @@ describe('BillingCompanyCtrl',function(){
 	
 	beforeEach(module('app'));
 	
-	beforeEach(inject(function($controller){
-		$controller("selectBilling");
-	}))
+    beforeEach(inject(function($rootScope, $controller) {
+        scope = $rootScope.$new();
+        ctrl = $controller('selectBilling', {$scope:scope});
+    })); 
 	
 	describe("selectBilling",function(){
-		it("should show a list of compaies linked to user",function(){
+		it("should return one or more billing companies",function(){
 			
-			
-		})
-	})
+		});
+	});
 });

@@ -40,7 +40,7 @@ var app = angular
 			.state('login', {
 				url: '/login',
 				templateUrl: 'templates/login.html',
-				controller: 'loginCtrl'
+				controller: 'loginCtrl3'
 			})
 			.state('forgotPass', {
 				url: '/login/forgot_password',
