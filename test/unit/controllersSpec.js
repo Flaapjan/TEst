@@ -6,11 +6,9 @@ describe('LoginCtrl', function(){
     beforeEach(module('app'));
     beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
         
-        //$httpBackend = _$httpBackend_;
-        //$httpBackend.expectGET('http://localhost:8000/authenticate').respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
-        
         scope = $rootScope.$new();
         ctrl = $controller('loginCtrl', {$scope: scope});
+        
     })); 
     
     it('Login controller should be defined', function() {
@@ -21,11 +19,6 @@ describe('LoginCtrl', function(){
         function(loginService) {
         expect(loginService).toBeDefined();
     }]));
-    
-    it('Login method should be defined', inject(['loginService',
-        function(loginService) {
-        expect(loginService.login).not.toBe(null);
-    }]));
 
 });
 
@@ -35,21 +28,28 @@ describe('ForgotPassCtrl', function(){
     beforeEach(module('app'));
     beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
         
-        //$httpBackend = _$httpBackend_;
-        //$httpBackend.expectGET('http://localhost:8000/authenticate').respond([{name: 'Nexus S'}, {name: 'Motorola DROID'}]);
-        
         scope = $rootScope.$new();
         ctrl = $controller('forgotPassCtrl', {$scope: scope});
     })); 
     
     it('Forgot password controller should be defined', function() {
         expect(ctrl).toBeDefined();
-    }); 
-    
-    it('Forgot password method should be defined', function() {
-        expect(ctrl.forgotPassword).not.toBe(null);
     });
+});
+
+describe('CosCtrl', function() {
+    var scope, $httpBackend;
+
+    beforeEach(module('app'));
+    beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
+        
+        scope = $rootScope.$new();
+    })); 
     
+    it('Class of service controller should be defined', inject(function($controller) {
+        var cosController = $controller('cosCtrl', {$scope: scope});
+        expect(cosController).toBeDefined();
+    }));
     
 });
 
@@ -58,15 +58,14 @@ describe('BillingCompanyCtrl',function(){
 	
 	beforeEach(module('app'));
 	
-	beforeEach(inject(function($controller){
-		$controller("selectBilling");
-	}))
+    beforeEach(inject(function($rootScope, $controller) {
+        scope = $rootScope.$new();
+        ctrl = $controller('selectBilling', {$scope:scope});
+    })); 
 	
 	describe("selectBilling",function(){
-		it("should show a list of compaies linked to user",function(){
+		it("should return one or more billing companies",function(){
 			
-			
-		})
-	})
-})
-
+		});
+	});
+});

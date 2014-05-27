@@ -44,16 +44,21 @@ describe('User login', function() {
 
         var password = element(by.model('userLogin.password'));
         password.sendKeys('456');
+        
+        //var ptor = protractor.getInstance();
+        //ptor.findElement(protractor.By.className('btn-default')).click();
+        
+        //expect(element(by.binding('errorMsg')).getText()).toEqual('Incorrect password or login email entered');
 
-        var ptor = protractor.getInstance();
-        ptor.findElement(protractor.By.className('btn-default')).click().then(function(){
-            browser.waitForAngular();
+        //var ptor = protractor.getInstance();
+        //ptor.findElement(protractor.By.className('btn-default')).click().then(function(){
+            //browser.waitForAngular();
             //var errorMessage = browser.findElement(by.css('.error-message'));
             //var errorMessage = element(by.model('errorMsg'))
             //expect(errorMessage.toMatch('Incorrect password or login email entered'));
             //expect(element(by.binding('errorMsg')).getText().toMatch('Incorrect password or login email entered'));
             //var errorMessage = element(by.binding('errorMsg')).getText();
-        });
+        //});
     });
 
     //TO-DO: complete
