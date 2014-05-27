@@ -53,9 +53,13 @@ var app = angular
 				controller: 'LogoutController'
 			})
 			.state('profile', {
-				url: '/profile/:user',
+				url: '/profile',
 				templateUrl: 'templates/profile.html',
 				controller: 'profileCtrl'
+			})
+			.state('profile.sysadmin', {
+				url: '/sys',
+				templateUrl:'templates/home.html'
 			})
 	}])
 			

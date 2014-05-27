@@ -78,7 +78,7 @@ ctrl.controller('profileCtrl',['$scope','$rootScope','$state','$compile', functi
 		else if( $rootScope.loggedUser.userRole.description == 'System Administrator' ){
 			$('#profileType').attr('sysadmin-directive');
 			$('#profileType').html('Call template home.html');
-			//console.log('system admin');
+			$state.go("profile.sysadmin");
 		}
 		else{
 			$('#profileType').html("Not system admin");

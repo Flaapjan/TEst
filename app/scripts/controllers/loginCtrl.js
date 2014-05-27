@@ -22,9 +22,6 @@ angular
 		$scope.login = function(user){
 			loginService.login(user); //Call login Service
 		}
-        $scope.title = 'Login';		
-		$rootScope.title = 'Zaralab - Login';
-		$scope.url = 'login.php';
 	}])
 	
 
