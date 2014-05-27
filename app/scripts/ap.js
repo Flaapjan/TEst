@@ -5,13 +5,8 @@ var app = angular
 	.config(['$urlRouterProvider','$stateProvider','$httpProvider', function($urlRouterProvider,$stateProvider,$httpProvider){
 		delete $httpProvider.defaults.headers.common['X-Requested-With'];
 		//$urlRouterProvider.otherwise('/login');//if Cookie does not exist
-		$urlRouterProvider.otherwise('/');//if Cookie exists
+		$urlRouterProvider.otherwise('/login');//if Cookie exists
 		$stateProvider
-			.state('home', {
-				url: '/',
-				templateUrl: 'templates/home.html',
-				controller: 'homeCtrl'
-			})
 			.state('cos', {
 				url: '/cos',
 				templateUrl: 'templates/cos.html',

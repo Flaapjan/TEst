@@ -8,27 +8,18 @@ angular
 				var $promise = $http.post('http://localhost:8080/authenticate',userLogin);
 				
 				$promise.then(function(msgLogin){
-					$rootScope.errorMsg = msgLogin.data;
-					if(msgLogin.data.length == 0) {
+					if(msgLogin.data.indexOf('mail') == -1) {
 						var currentUser = userLogin;
-						//console.log(msgLogin.data);
 						var $userPromise = $http.post('http://localhost:8080/login',currentUser);
 						
 						$userPromise.then(function(msg){
 							$rootScope.loggedUser = msg.data;
-							//console.log(msg.data);
 							var $billingPromise = $http.post('http://localhost:8080/billingCompanies',msg.data);
-							
-								$rootScope.user = msg.data;
-							
-							//console.log('logged in');
+							$rootScope.user = msg.data;
 							var billingMsg;
-							
 							$billingPromise.then(function(billingMsg){
 								$rootScope.billingCompanies = billingMsg.data;
 								$rootScope.headTemplate = 'templates/nav_log.html';
-								
-								//console.log(billingMsg.data);
 								
 								if(billingMsg.data.length > 1) {
 									$state.go("selectBilling");
@@ -38,8 +29,10 @@ angular
 									$state.go("profile");
 								}
 							});
-							
 						});
+					}
+					else{
+						$rootScope.loginError = msgLogin.data;
 					}
 				});
 			}

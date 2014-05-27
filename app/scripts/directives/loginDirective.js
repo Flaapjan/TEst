@@ -32,7 +32,7 @@ angular
 
 angular
 	.module('app')
-	.directive('sysAdminDirective',function(){
+	.directive('sysadminDirective',function(){
 	return{
 		templateUrl:'templates/home.html'
 	}

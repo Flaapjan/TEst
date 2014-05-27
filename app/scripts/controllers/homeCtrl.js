@@ -2,7 +2,7 @@
 
 var ctrl = angular
 	.module('app');
-	ctrl.controller('homeCtrl',['$scope','$rootScope','$http', function($scope, $rootScope, $http){
+	ctrl.controller('homeCtrl',['$scope','$rootScope','$http','$state', function($scope, $rootScope, $http,$state){
 		//$rootScope.headTemplate = 'templates/nav.html';
 		$rootScope.headTemplate = 'templates/nav_log.html';
 		$rootScope.title = "Zaralab - Home";
@@ -30,7 +30,6 @@ var ctrl = angular
 		$scope.tick = function(tickValue){
 			tickValue = !tickValue;
 		}
-		
 	}]);
 
 	
@@ -76,11 +75,14 @@ ctrl.controller('profileCtrl',['$scope','$rootScope','$state','$compile', functi
 		if( !$rootScope.user){
 			$state.go("login");
 		}
-		else if( $rootScope.user.userRole.description == 'System Administrator' ){
-			//$('#profileType').attr('sysAdmin-directive').html('Call template templaes/home.html');
-			
+		else if( $rootScope.loggedUser.userRole.description == 'System Administrator' ){
+			$('#profileType').attr('sysadmin-directive');
+			$('#profileType').html('Call template home.html');
+			//console.log('system admin');
 		}
-		//console.log($rootScope.user.userRole.description);
+		else{
+			$('#profileType').html("Not system admin");
+		}
 	}])
 	
 
