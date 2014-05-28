@@ -18,14 +18,20 @@ var ctrl = angular
 				
 			$scope.editRole = roleItem;
 		}
+		
 		$scope.cos = function(cosItem){
 			
-			if(typeof cosItem === 'undefined')
+			if(typeof cosItem === 'undefined'){
 				$scope.type = "Add";
-			else
+			}
+			else{
 				$scope.type = "Edit";
+				//dynamically add onclick events to add and edit
+				//editclassofservice
+			}
 			
 			$rootScope.cosVal = cosItem;
+			$rootScope.cosVal.callExternalDomestic = true;
 		}
 		$scope.tick = function(tickValue){
 			tickValue = !tickValue;

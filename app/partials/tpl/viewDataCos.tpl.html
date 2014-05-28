@@ -9,7 +9,7 @@
 	</thead>
 	<tbody>
 		<tr ng-repeat="item in pagedItems | searchFor:searchString">
-			<td>{{item.item}}</td>
+			<td>{{item.description}}</td>
 			<td style='width:40px'>
 				<a class='edit' ui-sref="editCos({cos:'{{item.item}}'})" ng-click="cos(item)"> Edit</a> 
 				/ 

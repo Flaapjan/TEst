@@ -9,17 +9,17 @@ angular
 				
 				$promise.then(function(msgLogin){
 					if(msgLogin.data.indexOf('mail') == -1) {
-						var currentUser = userLogin;
-						var $userPromise = $http.post('http://localhost:8080/login',currentUser);
+						$rootScope.currentUser = userLogin;
+						var $userPromise = $http.post('http://localhost:8080/login',$rootScope.currentUser);
 						
 						$userPromise.then(function(msg){
 							$rootScope.loggedUser = msg.data;
 							var $billingPromise = $http.post('http://localhost:8080/billingCompanies',msg.data);
 							$rootScope.user = msg.data;
-							console.log(msg.data);
+							//console.log(msg.data);
 							var billingMsg;
 							$billingPromise.then(function(billingMsg){
-								console.log(billingMsg.data);
+								//console.log(billingMsg.data);
 								$rootScope.billingCompanies = billingMsg.data;
 								$rootScope.headTemplate = 'templates/nav_log.html';
 								
@@ -41,15 +41,6 @@ angular
 		}
 	});
 	
-
-function finalLogin(user){
-	angular
-		.module('app')
-		.controller('loginCtrl',['$scope', function($scope){
-			$scope.title = "Welcome " + user;
-		}])
-		
-}
 
 //	----	JSON input test data
 /*

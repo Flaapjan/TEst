@@ -334,6 +334,9 @@ select.ddBilling{
 	float:right;
 }
 
+.row-disabled{
+	opacity:0.3;
+}
 
 
 

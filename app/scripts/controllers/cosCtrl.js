@@ -1,16 +1,19 @@
 
 var ctrl = angular.
 	module('app')
-	.controller('cosCtrl',['$scope','$http', function($scope,$http){
+	.controller('cosCtrl',['$scope','$http','$rootScope', function($scope,$http,$rootScope){
 		$scope.title = 'Class of Service'
 		$scope.tableTitles = ['CLASS OF SERVICE'];
 		$scope.choice = 'cos';
-		 
+		//console.log($rootScope.user);
 		
-		$http.get('api/cos.json')
-			.then(function(res){ 
-				$scope.pagedItems = res.data;
-			});
+		var $promise = $http.post('http://localhost:8080/getallclassofservice',$rootScope.currentUser);
+		
+		$promise.then(function(msg){
+			$scope.pagedItems = msg.data;
+			console.log(msg);
+		});
+		
 	}]); 
 
 ctrl.controller('editCos',['$scope','$http', function($scope, $http){
@@ -19,6 +22,8 @@ ctrl.controller('editCos',['$scope','$http', function($scope, $http){
 		   .then(function(res){
 				$scope.pagedItems = res.data;
 			});
+			
+			
 		
 			
 		$scope.addPost = function(cosName,internationalCalls){
@@ -27,15 +32,4 @@ ctrl.controller('editCos',['$scope','$http', function($scope, $http){
 			console.log(cosName + ' - ' + internationalCalls);
 		};
 		
-		/*var $promise = $http.post('api/cos.json',userLogin);
-				
-		$promise.then(function(msgLogin){
-			$rootScope.errorMsg = msgLogin.data;
-			if(msgLogin.data.length == 0) {
-				$rootScope.loggedUser = msg.data;
-				
-				console.log('success login');
-				$state.go("selectBilling");
-			}
-		});*/
 	}])

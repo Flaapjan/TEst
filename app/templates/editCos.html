@@ -1,7 +1,7 @@
 {{type}} <div ng-model="cosName" style="display:inline;">{{cosVal.item}}</div> Class of Service
 <br/>
 <input type="text" class="roleEditInput" placeholder="Class of Service Name" 
-name="cos" ng-model="cosVal.item" /> 
+name="cos" ng-model="cosVal.description" /> 
 
 <table>
 	<thead>
@@ -12,7 +12,7 @@ name="cos" ng-model="cosVal.item" />
 	<tbody>
 		<tr>
 			<td style="width:200px;">International Calls</td>
-			<td style="width:auto;"><input type='checkbox' ng-model="cosVal.internalAccess.InternalCalls" /></td>
+			<td style="width:auto;"><input type='checkbox' ng-model="cosVal.callInternal" /></td>
 		</tr>
 	</tbody>
 	<thead>
@@ -23,19 +23,19 @@ name="cos" ng-model="cosVal.item" />
 	<tbody>
 		<tr>
 			<td style="width:200px;">International</td>
-			<td style="width:auto;"><input type='checkbox' ng-model="cosVal.externalAccess.International"/></td>
+			<td style="width:auto;"><input type='checkbox' ng-model="cosVal.callExternalInternational"/></td>
 		</tr>
 		<tr>
 			<td style="width:200px;">Domestic</td>
-			<td style="width:auto;"><input type='checkbox' ng-model="cosVal.externalAccess.Domestic" /></td>
+			<td style="width:auto;"><input type='checkbox' ng-model="cosVal.callExternalDomestic" /></td>
 		</tr>
-		<tr>
+		<tr ng-disabled='!cosVal.callExternalDomestic' ng-class="{'row-disabled': !cosVal.callExternalDomestic}">
 			<td style="width:200px;">Landlines</td>
-			<td style="width:auto;"><input type='checkbox' ng-model="cosVal.externalAccess.Landlines" /></td>
+			<td style="width:auto;"><input type='checkbox' ng-model="cosVal.callExternalDomesticLandline" /></td>
 		</tr>
-		<tr>
+		<tr ng-disabled='!cosVal.callExternalDomestic' ng-class="{'row-disabled': !cosVal.callExternalDomestic}">
 			<td style="width:200px;">Mobile Phones</td>
-			<td style="width:auto;"><input type='checkbox' ng-model="cosVal.externalAccess.MobilePhones" /></td>
+			<td style="width:auto;"><input type='checkbox' ng-model="cosVal.callExternalDomesticMobile" /></td>
 		</tr>
 	</tbody>
 	 
@@ -53,9 +53,12 @@ name="cos" ng-model="cosVal.item" />
 			<td><input type='checkbox' /> Block</td>
 			<td colspan="2"><button>Add</button></td>
 		</tr>
-		<tr ng-repeat="items in cosVal.exceptions.code  | searchFor:searchString">
-			<td style="width:50px;">Code {{items}}</td>
-			<td style="width:80px;">allowed</td>
+		<tr ng-repeat="items in cosVal.classOfServiceExceptions  | searchFor:searchString">
+			<td style="width:50px;">Code {{items.code}}</td>
+			<td style="width:80px;">
+				<span ng-show="items.allowed">Allowed</span>
+				<span ng-show="!items.allowed">Blocked</span>
+			</td>
 			<td><button ng-click="codes.splice($index,1)">Remove</button></td>
 		</tr>
 	</tbody>
